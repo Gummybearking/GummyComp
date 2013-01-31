@@ -1,0 +1,15 @@
+main: GComp.main.me.max.bukkit.CompMain
+name: GummyComp
+author: Guess Who?
+version: 1.8.3
+commands:
+  wel:
+    description: Welcome a player!
+  welcome:
+    description: Welcome a player!
+  gummycomp:
+    description: Control the GC plugins!
+  sheal:
+    description: Heals a player silently!
+  boss:
+    description: Check the time till the next boss!

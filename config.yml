@@ -1,0 +1,44 @@
+Welcomer:
+  enable: true
+  welcome-message: '&dWelcome the the server %player%!'
+DynCompass:
+  enable: true
+  permission: GummyComp.DynCompass
+EpicSpawner:
+  enable: true
+  timer: 600
+  commands: []
+  command-message: '%time% more minutes until the boss!'
+  broadcast-message: '%time% more minutes until the boss!'
+  broadcast-interval: 300
+MobArenaHooks:
+  enable: true
+  join-message: '&a%player% has joined the arena %arena%'
+BountyLister:
+  enable: true
+  message: '&6There are %amount% bounties open. Use "/Bounty" for more info'
+  timer: 360
+EnderdragonEnhanced:
+  enable: true
+  drops: []
+  rare-drops: []
+  testing: true
+  reward-list:
+    top-line-player: '&dThe Enderdragon has been slayed by %player%. It has dropped:'
+    top-line-env: '&dThe Enderdragon has been slain. It has dropped:'
+    list-prefix: '&b-'
+SilentHeal:
+  enable: true
+  permission: GummyComp.sheal
+EpicAbilities:
+  enable: true
+  drops: []
+  Example_Boss:
+    common-loot: []
+SpellControl:
+  enable: true
+  whitelist:
+    Example_world:
+    - fireball
+  
+  

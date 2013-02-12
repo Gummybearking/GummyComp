@@ -54,9 +54,9 @@ public class ItemUtilities {
 				  		if(!ewl.equals(key)) {
 				  			Enchantment ench = Enchantment.getByName(ewl.split("-")[0]);
 				  			if(ench == null) {
-				  				stack.addEnchantment(getEnchantmentByCommonName(ewl.split("-")[0]), Integer.valueOf(ewl.split("-")[1]));
+				  				stack.addUnsafeEnchantment(getEnchantmentByCommonName(ewl.split("-")[0]), Integer.valueOf(ewl.split("-")[1]));
 				  			}else{
-				  				stack.addEnchantment(Enchantment.getByName(ewl.split("-")[0]), Integer.valueOf(ewl.split("-")[1]));
+				  				stack.addUnsafeEnchantment(Enchantment.getByName(ewl.split("-")[0]), Integer.valueOf(ewl.split("-")[1]));
 				  			}
 				  		}
 				  	}

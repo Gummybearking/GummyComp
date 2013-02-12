@@ -50,9 +50,40 @@ public class EpicSpawner {
 		message = ChatColor.translateAlternateColorCodes('&', message);
 		
 		//seperate into time units
-		long minutes  = time / 60 + (time%60);
+		//seperate into time units
+		long hours   = time / 3600;
+		long minutes = (time % 3600)/60;
+		long seconds = (time % 3600)%60;
+		String timer = "";
+		if (hours != 0 && minutes != 0 && seconds != 0) {
+			timer = hours + " hours, " + 
+					minutes + " minutes, and " + 
+					seconds + " seconds";
+		}
+		if (hours != 0 && minutes != 0 && seconds == 0) {
+			timer = hours + " hours and " + 
+					minutes + " minutes";
+		}
+		if (hours != 0 && minutes == 0 && seconds != 0) {
+			timer = hours + " hours and " + 
+					seconds + " seconds";
+		}
+		if (hours == 0 && minutes != 0 && seconds != 0) {
+			timer = minutes + " minutes and " + 
+					seconds + " seconds";
+		}
+		if (hours != 0 && minutes == 0 && seconds == 0) {
+			timer = hours + " hours";  
+		}
+		if (hours == 0 && minutes == 0 && seconds != 0) {
+			timer = seconds + " seconds";
+		}
+		if (hours == 0 && minutes != 0 && seconds == 0) {
+			timer = minutes + " minutes";
+		}
+		message = message.replace("%time%", String.valueOf(timer));
 		
-		message = message.replace("%time%", String.valueOf(minutes));
+		message = message.replace("%time%", String.valueOf(timer));
 		player.sendMessage(message);
 	}
 	public void commandTimer() {
@@ -67,6 +98,8 @@ public class EpicSpawner {
 					if(time <= 0) {
 						runACommand();
 						time = main.getConfig().getLong("EpicSpawner.timer");
+						yamlutils.getEpicSpawnerTimer().set("timer", time);
+						yamlutils.saveEpicSpawnerTimer();
 						return;
 					}
 					yamlutils.getEpicSpawnerTimer().set("timer", time);
